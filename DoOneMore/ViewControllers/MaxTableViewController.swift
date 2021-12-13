@@ -9,9 +9,8 @@ import UIKit
 
 class MaxTableViewController: UITableViewController {
 
-    
-    @IBOutlet weak var exerciseTypeLabel: UILabel!
-    @IBOutlet weak var maxWeightLabel: UILabel!
+    var reps: String?
+    var weight: String?
     
     var max: Max?
     
@@ -20,6 +19,46 @@ class MaxTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        presentAlert()
+        WeightController.shared.loadFromPersistenceStorage()
+    }
+    
+    func presentAlert() {
+        guard let weight = weight,
+              let reps = reps else { return }
+        
+        presentMaxAlert(weight: Int(weight)!, reps: Int(reps)!)
+    }
+    
+    func presentMaxAlert(weight: Int, reps: Int) {
+        let alert = UIAlertController(title: "New Max", message: "what exercise did you max on?", preferredStyle: .alert)
+        
+        alert.addTextField { (textField) in
+            textField.placeholder = "Enter exercise"
+            textField.autocorrectionType = .yes
+            textField.autocapitalizationType = .sentences
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
+        
+        let addMaxAction = UIAlertAction(title: "Add", style: .default) { (_) in
+            guard let text = alert.textFields?.first?.text, !text.isEmpty else { return }
+            WeightController.shared.createMaxWith(reps: reps, weight: weight, exercise: text) { (success) in
+                if success {
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                } else {
+                    print("unable to save max")
+                }
+            }
+        }
+        
+        
+        alert.addAction(cancelAction)
+        alert.addAction(addMaxAction)
+        
+        self.present(alert, animated: true)
         
     }
     
@@ -44,50 +83,24 @@ class MaxTableViewController: UITableViewController {
         return cell
     }
     
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+            let maxToDelete = WeightController.shared.maxs[indexPath.row]
+            guard let index = WeightController.shared.maxs.firstIndex(of: maxToDelete) else { return }
+            
+            WeightController.shared.maxs.remove(at: index)
+            DispatchQueue.main.async {
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+        }
     }
-    */
+    
 
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
 
-    }
-    */
 
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
-    /*
-    // MARK: - Navigation
+    
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

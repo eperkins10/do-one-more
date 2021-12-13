@@ -10,12 +10,14 @@ import Foundation
 class Max: Codable {
     let reps: Int
     let weight: Int
+    var exercise: String
     
     
     
-    init(reps: Int, weight: Int) {
+    init(reps: Int, weight: Int, exercise: String) {
         self.reps = reps
         self.weight = weight
+        self.exercise = exercise
     }
 }
 

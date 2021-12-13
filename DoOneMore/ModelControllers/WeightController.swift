@@ -15,16 +15,17 @@ class WeightController {
     
     //CRUD
     
-    func createMaxWith(reps: Int, weight: Int, completion: @escaping (Bool) -> Void) {
-        let newMax = Max(reps: reps, weight: weight)
+    func createMaxWith(reps: Int, weight: Int, exercise: String, completion: @escaping (Bool) -> Void) {
+        let newMax = Max(reps: reps, weight: weight, exercise: exercise)
         maxs.append(newMax)
-        loadFromPersistenceStorage()
+        saveToPersistenceStorage()
+        completion(true)
     }
     
-    func delete(max: Max) {
+    func delete(_ max: Max) {
         guard let index = maxs.firstIndex(of: max) else { return }
         maxs.remove(at: index)
-        loadFromPersistenceStorage()
+        saveToPersistenceStorage()
     }
     
     
