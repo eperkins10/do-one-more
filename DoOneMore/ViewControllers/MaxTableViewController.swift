@@ -98,9 +98,9 @@ class MaxTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let maxToDelete = WeightController.shared.maxs[indexPath.row]
-            guard let index = WeightController.shared.maxs.firstIndex(of: maxToDelete) else { return }
+//            guard let index = WeightController.shared.maxs.firstIndex(of: maxToDelete) else { return }
             
-            WeightController.shared.maxs.remove(at: index)
+            WeightController.shared.delete(maxToDelete)
             DispatchQueue.main.async {
                 tableView.deleteRows(at: [indexPath], with: .fade)
             }
