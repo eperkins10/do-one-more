@@ -21,6 +21,12 @@ class MaxTableViewController: UITableViewController {
         super.viewDidLoad()
         presentAlert()
         WeightController.shared.loadFromPersistenceStorage()
+        tableView.reloadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
     }
     
     func presentAlert() {
@@ -62,6 +68,10 @@ class MaxTableViewController: UITableViewController {
         
     }
     
+    func setupViews() {
+        self.view.backgroundColor = .systemGray
+    }
+    
     
 
     // MARK: - Table view data source
@@ -82,6 +92,7 @@ class MaxTableViewController: UITableViewController {
 
         return cell
     }
+    
     
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
