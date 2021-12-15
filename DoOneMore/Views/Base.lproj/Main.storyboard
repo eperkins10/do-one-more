@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VOn-dh-Git">
-                                <rect key="frame" x="21" y="452" width="374" height="100"/>
+                                <rect key="frame" x="21" y="425" width="372" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="cfz-Xu-9jG"/>
                                 </constraints>
@@ -33,7 +33,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQI-ga-UMf">
-                                <rect key="frame" x="105" y="602" width="206" height="36"/>
+                                <rect key="frame" x="105" y="586" width="206" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Save Max">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -44,7 +44,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wBA-Zh-v79">
-                                <rect key="frame" x="97" y="336" width="221" height="50"/>
+                                <rect key="frame" x="103.5" y="323" width="207" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
                                 <state key="normal" title="Calculate 1RM">
@@ -56,7 +56,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EdR-io-R7w">
-                                <rect key="frame" x="105" y="726" width="206" height="36"/>
+                                <rect key="frame" x="124" y="726" width="166" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Reset Fields">
                                     <color key="titleColor" systemColor="labelColor"/>
@@ -67,7 +67,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="Hoe-oX-V3h">
-                                <rect key="frame" x="64.5" y="231" width="285" height="50"/>
+                                <rect key="frame" x="64.5" y="218" width="285" height="50"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="input weight" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZuJ-dV-hD5">
                                         <rect key="frame" x="0.0" y="0.0" width="127" height="50"/>
@@ -94,27 +94,22 @@
                         <viewLayoutGuide key="safeArea" id="nqM-QB-xF5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="wBA-Zh-v79" firstAttribute="leading" secondItem="nqM-QB-xF5" secondAttribute="leading" constant="97" id="2LE-co-cdP"/>
-                            <constraint firstItem="VOn-dh-Git" firstAttribute="centerX" secondItem="nqM-QB-xF5" secondAttribute="centerX" constant="1" id="5sW-eu-oHO"/>
+                            <constraint firstItem="CQI-ga-UMf" firstAttribute="top" secondItem="VOn-dh-Git" secondAttribute="bottom" constant="61" id="12d-I5-g2c"/>
+                            <constraint firstItem="VOn-dh-Git" firstAttribute="centerX" secondItem="nqM-QB-xF5" secondAttribute="centerX" id="5sW-eu-oHO"/>
                             <constraint firstItem="VOB-Ht-IEy" firstAttribute="top" secondItem="nqM-QB-xF5" secondAttribute="top" id="7Uo-SF-Mg3"/>
-                            <constraint firstItem="wBA-Zh-v79" firstAttribute="centerX" secondItem="Hoe-oX-V3h" secondAttribute="centerX" constant="0.5" id="80x-HE-pxg"/>
                             <constraint firstItem="nqM-QB-xF5" firstAttribute="bottom" secondItem="EdR-io-R7w" secondAttribute="bottom" constant="100" id="A0w-Ej-dij"/>
                             <constraint firstItem="wBA-Zh-v79" firstAttribute="top" secondItem="Hoe-oX-V3h" secondAttribute="bottom" constant="55" id="B1o-Yn-Bd0"/>
-                            <constraint firstItem="Hoe-oX-V3h" firstAttribute="centerX" secondItem="Tiz-Bh-Iz0" secondAttribute="centerX" id="Fv6-Yo-7yu"/>
-                            <constraint firstItem="VOn-dh-Git" firstAttribute="centerX" secondItem="Hoe-oX-V3h" secondAttribute="centerX" constant="1" id="GwV-5D-DHO"/>
-                            <constraint firstItem="VOB-Ht-IEy" firstAttribute="centerX" secondItem="Hoe-oX-V3h" secondAttribute="centerX" id="MLc-he-JXe"/>
-                            <constraint firstItem="EdR-io-R7w" firstAttribute="centerX" secondItem="VOn-dh-Git" secondAttribute="centerX" id="MZe-Qt-FKP"/>
-                            <constraint firstItem="nqM-QB-xF5" firstAttribute="bottom" secondItem="Hoe-oX-V3h" secondAttribute="bottom" constant="581" id="NQB-JD-VP4"/>
-                            <constraint firstItem="wBA-Zh-v79" firstAttribute="leading" secondItem="nqM-QB-xF5" secondAttribute="leading" constant="97" id="Sdf-tX-yLp"/>
+                            <constraint firstItem="VOn-dh-Git" firstAttribute="centerY" secondItem="nqM-QB-xF5" secondAttribute="centerY" id="Hmb-Mb-2Dw"/>
+                            <constraint firstItem="EdR-io-R7w" firstAttribute="width" secondItem="Tiz-Bh-Iz0" secondAttribute="width" multiplier="0.4" id="MQi-1t-5Yt"/>
+                            <constraint firstItem="VOn-dh-Git" firstAttribute="width" secondItem="Tiz-Bh-Iz0" secondAttribute="width" multiplier="0.898551" id="TX9-Pe-gy0"/>
                             <constraint firstItem="Hoe-oX-V3h" firstAttribute="centerX" secondItem="nqM-QB-xF5" secondAttribute="centerX" id="VeL-LF-622"/>
                             <constraint firstItem="CQI-ga-UMf" firstAttribute="width" secondItem="Tiz-Bh-Iz0" secondAttribute="width" multiplier="0.103865" constant="162.99988999999999" id="ZI2-fM-xU6"/>
-                            <constraint firstItem="nqM-QB-xF5" firstAttribute="bottom" secondItem="VOn-dh-Git" secondAttribute="bottom" constant="310" id="cYM-16-20w"/>
-                            <constraint firstItem="EdR-io-R7w" firstAttribute="leading" secondItem="nqM-QB-xF5" secondAttribute="leading" constant="105" id="eUw-7B-W7e"/>
-                            <constraint firstItem="nqM-QB-xF5" firstAttribute="bottom" secondItem="CQI-ga-UMf" secondAttribute="bottom" constant="224" id="i3H-ku-aZu"/>
+                            <constraint firstItem="wBA-Zh-v79" firstAttribute="centerX" secondItem="nqM-QB-xF5" secondAttribute="centerX" id="hXx-Ku-6OC"/>
                             <constraint firstItem="CQI-ga-UMf" firstAttribute="centerX" secondItem="nqM-QB-xF5" secondAttribute="centerX" constant="1" id="iQR-Eh-xU3"/>
-                            <constraint firstItem="nqM-QB-xF5" firstAttribute="trailing" secondItem="wBA-Zh-v79" secondAttribute="trailing" constant="96" id="lVY-of-9Zv"/>
+                            <constraint firstItem="EdR-io-R7w" firstAttribute="centerX" secondItem="nqM-QB-xF5" secondAttribute="centerX" id="jAv-5w-Bnx"/>
                             <constraint firstItem="VOn-dh-Git" firstAttribute="top" secondItem="wBA-Zh-v79" secondAttribute="bottom" constant="66" id="qqX-YS-aT3"/>
-                            <constraint firstItem="VOn-dh-Git" firstAttribute="leading" secondItem="nqM-QB-xF5" secondAttribute="leading" constant="21" id="tqh-xs-Jcb"/>
+                            <constraint firstItem="wBA-Zh-v79" firstAttribute="width" secondItem="Tiz-Bh-Iz0" secondAttribute="width" multiplier="0.5" id="wPt-3k-eBi"/>
+                            <constraint firstItem="VOB-Ht-IEy" firstAttribute="centerX" secondItem="nqM-QB-xF5" secondAttribute="centerX" id="yeX-2h-0zw"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="RNO-aT-Bkr">
@@ -134,7 +129,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lnr-C2-Dl5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="794.20289855072474" y="55.580357142857139"/>
+            <point key="canvasLocation" x="803" y="56"/>
         </scene>
         <!--Max Table View Controller-->
         <scene sceneID="84E-Zk-Mns">
